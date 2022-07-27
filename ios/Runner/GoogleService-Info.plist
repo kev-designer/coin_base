@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>830115323892-38hcg8cgq1s0100mouats743sag3bt19.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.830115323892-38hcg8cgq1s0100mouats743sag3bt19</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>830115323892-0ri8jh9l1mau5kbvne6co2s7k8cslaq3.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyDA255KlIzxs49ZMFubPX1g9_SSBoZ05v8</string>
+	<key>GCM_SENDER_ID</key>
+	<string>830115323892</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.example.coinBase</string>
+	<key>PROJECT_ID</key>
+	<string>coinbase-flutter-app</string>
+	<key>STORAGE_BUCKET</key>
+	<string>coinbase-flutter-app.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:830115323892:ios:10293694f8c0431ada63a1</string>
+</dict>
+</plist>
