@@ -188,7 +188,7 @@ class TxtButton extends StatelessWidget {
       onTap: onPressed,
       child: Container(
           padding: const EdgeInsets.only(top: 10, left: 10, bottom: 10),
-          alignment: Alignment.topRight,
+          alignment: Alignment.center,
           child: Text(
             textName,
             style: GoogleFonts.lato(

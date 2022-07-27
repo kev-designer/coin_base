@@ -60,11 +60,11 @@ class _MobileLoginScreenState extends State<MobileLoginScreen> {
                 weight: FontWeight.w500,
                 borderColor: ColorData.primary,
               ),
-              60.heightBox,
+              40.heightBox,
 
-              //SEND OTP BUTTON
+              //LOGIN BUTTON
               AnimatedButton(
-                textName: "Send otp".toUpperCase(),
+                textName: "Login".toUpperCase(),
                 // loading: authViewModel.loading,
                 onPressed: () {},
                 buttonColor: ColorData.primary,
@@ -73,7 +73,7 @@ class _MobileLoginScreenState extends State<MobileLoginScreen> {
 
               //EMAIL BUTTON
               AnimatedButton(
-                textName: "Login with Email".toUpperCase(),
+                textName: "Countinue with Email".toUpperCase(),
                 // loading: authViewModel.loading,
                 onPressed: () {
                   Navigator.pushNamed(context, RoutesName.login);
