@@ -17,6 +17,13 @@ class MobileLoginScreen extends StatefulWidget {
 
 class _MobileLoginScreenState extends State<MobileLoginScreen> {
   final TextEditingController _mobileController = TextEditingController();
+
+  @override
+  void dispose() {
+    super.dispose();
+    _mobileController.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -62,9 +69,9 @@ class _MobileLoginScreenState extends State<MobileLoginScreen> {
               ),
               40.heightBox,
 
-              //LOGIN BUTTON
+              //OTP BUTTON
               AnimatedButton(
-                textName: "Login".toUpperCase(),
+                textName: "Send otp".toUpperCase(),
                 // loading: authViewModel.loading,
                 onPressed: () {},
                 buttonColor: ColorData.primary,
