@@ -1,4 +1,6 @@
-<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M11 19C15.4183 19 19 15.4183 19 11C19 6.58172 15.4183 3 11 3C6.58172 3 3 6.58172 3 11C3 15.4183 6.58172 19 11 19Z" stroke="#B2B2B2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M21 21L16.65 16.65" stroke="#B2B2B2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="20.523" height="20.523" viewBox="0 0 20.523 20.523">
+  <g id="Icon_feather-search" data-name="Icon feather-search" transform="translate(0.9 0.9)">
+    <path id="Path_54949" data-name="Path 54949" d="M29.41,29.41l-4.435-4.435" transform="translate(-11.059 -11.059)" fill="none" stroke="#006ef3" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"/>
+    <path id="Path_54948" data-name="Path 54948" d="M20.812,12.656A8.156,8.156,0,1,1,12.656,4.5a8.156,8.156,0,0,1,8.156,8.156Z" transform="translate(-4.5 -4.5)" fill="none" stroke="#006ef3" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"/>
+  </g>
 </svg>

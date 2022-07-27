@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="33" height="33" viewBox="0 0 33 33">
+  <g id="play" transform="translate(-313.657 -359.999)">
+    <path id="Path_54921" data-name="Path 54921" d="M18.5,2.5a16,16,0,1,0,16,16A16.014,16.014,0,0,0,18.5,2.5Zm5.154,16.808-7.545,5.019a.975.975,0,0,1-1.516-.808V13.481a.975.975,0,0,1,1.516-.808l7.545,5.019A.976.976,0,0,1,23.654,19.308Z" transform="translate(311.657 357.999)" fill="#006ef3" stroke="#fff" stroke-width="1"/>
+    <path id="Icon_awesome-play" data-name="Icon awesome-play" d="M10.65,5.389,1.817.167A1.2,1.2,0,0,0,0,1.2V11.645a1.2,1.2,0,0,0,1.817,1.036L10.65,7.462A1.2,1.2,0,0,0,10.65,5.389Z" transform="translate(326.055 370.169)" fill="#fff"/>
+  </g>
+</svg>

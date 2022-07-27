@@ -9,6 +9,7 @@ class TextFields extends StatelessWidget {
   final TextEditingController controller;
   final Color color;
   final String hintText;
+  final TextInputType keybordType;
   final bool obscureText;
   final SvgPicture suffixIcon;
   final FontWeight weight;
@@ -17,6 +18,7 @@ class TextFields extends StatelessWidget {
   const TextFields({
     Key? key,
     required this.controller,
+    required this.keybordType,
     required this.obscureText,
     required this.suffixIcon,
     required this.color,
@@ -31,7 +33,7 @@ class TextFields extends StatelessWidget {
       obscureText: obscureText,
       controller: controller,
       cursorColor: Theme.of(context).primaryColor,
-      keyboardType: TextInputType.name,
+      keyboardType: keybordType,
       decoration: InputDecoration(
         focusColor: ColorData.black,
         fillColor: const Color(0xffFAFAFA),
@@ -49,7 +51,7 @@ class TextFields extends StatelessWidget {
           borderSide: BorderSide(color: Color(0xFFE0E0E0), width: 1.8),
         ),
         focusedBorder: const OutlineInputBorder(
-          borderSide: BorderSide(color: Color(0xFF006EF3), width: 1.8),
+          borderSide: BorderSide(color: ColorData.primary, width: 1.8),
         ),
         hintText: hintText,
         contentPadding:
@@ -127,6 +129,74 @@ class SearchBar extends StatelessWidget {
           color: ColorData.black,
           fontSize: 16,
         ),
+      ),
+    );
+  }
+}
+
+//PASSWORD TEXT FIELDS
+class PasswordTextFields extends StatelessWidget {
+  final TextEditingController controller;
+
+  final Color color;
+  final String hintText;
+  final TextInputType keybordType;
+  final bool obscureText;
+  final GestureDetector suffixIcon;
+  final FontWeight weight;
+  final Color borderColor;
+
+  const PasswordTextFields({
+    Key? key,
+    required this.controller,
+    required this.keybordType,
+    required this.obscureText,
+    required this.suffixIcon,
+    required this.color,
+    required this.hintText,
+    required this.weight,
+    required this.borderColor,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return TextFormField(
+      obscureText: obscureText,
+      controller: controller,
+      cursorColor: Theme.of(context).primaryColor,
+      keyboardType: keybordType,
+      decoration: InputDecoration(
+        focusColor: ColorData.black,
+        fillColor: const Color(0xffFAFAFA),
+        filled: true,
+        counterText: '',
+        border: const OutlineInputBorder(),
+        suffixIcon: GestureDetector(
+          onTap: () {},
+          child: Padding(
+            padding: const EdgeInsets.all(14.0),
+            child: suffixIcon,
+          ),
+        ),
+        enabledBorder: const OutlineInputBorder(
+          borderSide: BorderSide(color: Color(0xFFE0E0E0), width: 1.8),
+        ),
+        focusedBorder: const OutlineInputBorder(
+          borderSide: BorderSide(color: ColorData.primary, width: 1.8),
+        ),
+        hintText: hintText,
+        contentPadding:
+            const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
+        hintStyle: GoogleFonts.lato(
+          color: ColorData.grey,
+          fontSize: 16,
+          fontWeight: FontWeight.w500,
+        ),
+      ),
+      style: GoogleFonts.lato(
+        color: ColorData.black,
+        fontSize: 16,
+        fontWeight: FontWeight.w500,
       ),
     );
   }
