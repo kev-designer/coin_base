@@ -20,7 +20,7 @@ class Utils {
     showFlushbar(
       context: context,
       flushbar: Flushbar(
-        backgroundColor: ColorData.primary,
+        backgroundColor: ColorData.black,
         message: message,
         titleSize: height(context) * .018,
         forwardAnimationCurve: Curves.fastLinearToSlowEaseIn,
