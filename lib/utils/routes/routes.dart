@@ -1,4 +1,6 @@
 import 'package:coin_base/auth/login.dart';
+import 'package:coin_base/auth/mobile_login.dart';
+import 'package:coin_base/auth/signup.dart';
 import 'package:coin_base/view/Home/home_screen.dart';
 import 'package:coin_base/view/splash_screen.dart';
 import 'package:coin_base/widgets/nav_bar.dart';
@@ -30,11 +32,12 @@ class Routes {
 
       //SIGNUP PAGE
       case RoutesName.signUp:
-        return MaterialPageRoute(builder: (context) => const LoginScreen());
+        return MaterialPageRoute(builder: (context) => const SignUpScreen());
 
       //MOBILE LOGIN PAGE
       case RoutesName.mobileLogin:
-        return MaterialPageRoute(builder: (context) => const LoginScreen());
+        return MaterialPageRoute(
+            builder: (context) => const MobileLoginScreen());
 
       //DEFAULT
       default:

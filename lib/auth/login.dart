@@ -1,3 +1,4 @@
+import 'package:coin_base/utils/routes/routes_name.dart';
 import 'package:coin_base/widgets/buttons.dart';
 import 'package:coin_base/widgets/colors.dart';
 import 'package:coin_base/widgets/const.dart';
@@ -54,7 +55,10 @@ class _LoginScreenState extends State<LoginScreen> {
                 controller: _emailController,
                 obscureText: false,
                 keybordType: TextInputType.emailAddress,
-                suffixIcon: SvgPicture.asset("assets/svgs/mail.svg"),
+                suffixIcon: SvgPicture.asset(
+                  "assets/svgs/mail.svg",
+                  color: ColorData.primary,
+                ),
                 color: const Color(0xFFFAFAFA),
                 hintText: "Email",
                 weight: FontWeight.w500,
@@ -103,7 +107,29 @@ class _LoginScreenState extends State<LoginScreen> {
                 onPressed: () {},
                 buttonColor: ColorData.primary,
               ),
-              40.heightBox,
+              32.heightBox,
+
+              //MOBILE BUTTON
+              AnimatedButton(
+                textName: "Continue with mobile".toUpperCase(),
+                // loading: authViewModel.loading,
+                onPressed: () {
+                  Navigator.pushNamed(context, RoutesName.mobileLogin);
+                },
+                buttonColor: ColorData.black,
+              ),
+              32.heightBox,
+
+              //SIGNUP BUTTON
+              SecondaryButton(
+                textName: "Create Account".toUpperCase(),
+                // loading: authViewModel.loading,
+                onPressed: () {
+                  Navigator.pushNamed(context, RoutesName.signUp);
+                },
+                buttonColor: ColorData.lightgrey.withOpacity(.6),
+              ),
+              32.heightBox,
             ],
           ),
         ),

@@ -1,18 +1,17 @@
 import 'package:coin_base/widgets/const.dart';
-import 'package:coin_base/widgets/text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import 'colors.dart';
 
-//FILLED BUTTON
-class FilledButton extends StatelessWidget {
+//PRIMARY BUTTON
+class PrimaryButton extends StatelessWidget {
   final VoidCallback onPressed;
   final String textName;
   final Color buttonColor;
 
-  const FilledButton(
+  const PrimaryButton(
       {Key? key,
       required this.textName,
       required this.onPressed,
@@ -45,6 +44,55 @@ class FilledButton extends StatelessWidget {
           textName,
           style: GoogleFonts.nunito(
             color: ColorData.white,
+            letterSpacing: 1,
+            fontSize: 18,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+//PRIMARY BUTTON
+class SecondaryButton extends StatelessWidget {
+  final VoidCallback onPressed;
+  final String textName;
+  final Color buttonColor;
+
+  const SecondaryButton(
+      {Key? key,
+      required this.textName,
+      required this.onPressed,
+      required this.buttonColor})
+      : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return ElevatedButton(
+      style: ElevatedButton.styleFrom(
+        primary: buttonColor,
+        elevation: 0,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(10.0),
+        ),
+      ),
+      onPressed: () {
+        onPressed();
+      },
+      child: Container(
+        alignment: Alignment.center,
+        height: 50,
+        width: double.infinity,
+        decoration: const BoxDecoration(
+          borderRadius: BorderRadius.all(
+            Radius.circular(6),
+          ),
+        ),
+        child: Text(
+          textName,
+          style: GoogleFonts.nunito(
+            color: ColorData.black,
             letterSpacing: 1,
             fontSize: 18,
             fontWeight: FontWeight.bold,
