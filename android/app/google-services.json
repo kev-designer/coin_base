@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "830115323892",
+    "project_id": "coinbase-flutter-app",
+    "storage_bucket": "coinbase-flutter-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:830115323892:android:c9b930366ad193f9da63a1",
+        "android_client_info": {
+          "package_name": "com.example.coin_base"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "830115323892-0ri8jh9l1mau5kbvne6co2s7k8cslaq3.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.coin_base",
+            "certificate_hash": "da39a3ee5e6b4b0d3255bfef95601890afd80709"
+          }
+        },
+        {
+          "client_id": "830115323892-5sidgbl5farki5ktedg9duo9j3md9dmd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDcLuOczXGDrSh7y9AwLEAZfxenh6Wdfrw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "830115323892-5sidgbl5farki5ktedg9duo9j3md9dmd.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
