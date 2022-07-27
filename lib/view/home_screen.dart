@@ -113,7 +113,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                                       crossAxisAlignment:
                                           CrossAxisAlignment.end,
                                       children: [
-                                        //NAME
+                                        //PRICE USD
                                         Text(
                                           data?.priceUsd?.toString() ?? "",
                                           style: GoogleFonts.nunito(),
@@ -123,7 +123,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                                         ).text.xl.semiBold.make(),
                                         8.heightBox,
 
-                                        //SYMBOL
+                                        //NUMBERS
                                         Text(
                                           data?.percentChange1h?.toString() ??
                                               "",
