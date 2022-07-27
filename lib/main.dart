@@ -1,8 +1,15 @@
 import 'package:flutter/material.dart';
 import 'utils/routes/routes.dart';
 import 'utils/routes/routes_name.dart';
+import 'package:firebase_core/firebase_core.dart';
 
-void main() {
+// void main() {
+//   runApp(const MyApp());
+// }
+
+Future main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   runApp(const MyApp());
 }
 
