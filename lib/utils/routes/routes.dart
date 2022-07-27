@@ -1,4 +1,5 @@
-import 'package:coin_base/view/home_screen.dart';
+import 'package:coin_base/auth/login.dart';
+import 'package:coin_base/view/Home/home_screen.dart';
 import 'package:coin_base/view/splash_screen.dart';
 import 'package:coin_base/widgets/nav_bar.dart';
 import 'package:flutter/material.dart';
@@ -19,13 +20,21 @@ class Routes {
       case RoutesName.home:
         return MaterialPageRoute(builder: (context) => const HomeScreen());
 
-          //NAVBAR PAGE
+      //NAVBAR PAGE
       case RoutesName.navBar:
         return MaterialPageRoute(builder: (context) => const NavBar());
 
-      // //LOGIN PAGE
-      // case RoutesName.login:
-      //   return MaterialPageRoute(builder: (context) => const LoginView());
+      //LOGIN PAGE
+      case RoutesName.login:
+        return MaterialPageRoute(builder: (context) => const LoginScreen());
+
+      //SIGNUP PAGE
+      case RoutesName.signUp:
+        return MaterialPageRoute(builder: (context) => const LoginScreen());
+
+      //MOBILE LOGIN PAGE
+      case RoutesName.mobileLogin:
+        return MaterialPageRoute(builder: (context) => const LoginScreen());
 
       //DEFAULT
       default:

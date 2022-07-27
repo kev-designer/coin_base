@@ -1,7 +1,7 @@
 import 'dart:async';
 import 'package:coin_base/utils/routes/routes.dart';
 import 'package:coin_base/utils/routes/routes_name.dart';
-import 'package:coin_base/view/home_screen.dart';
+import 'package:coin_base/view/Home/home_screen.dart';
 import 'package:flutter/material.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -17,7 +17,7 @@ class _SplashScreenState extends State<SplashScreen> {
     super.initState();
     Timer(
       const Duration(seconds: 3),
-      () => Navigator.pushNamed(context, RoutesName.navBar),
+      () => Navigator.pushNamed(context, RoutesName.login),
     );
   }
 

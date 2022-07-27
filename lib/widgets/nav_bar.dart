@@ -1,6 +1,6 @@
-import 'package:coin_base/view/home_screen.dart';
-import 'package:coin_base/view/new_screen.dart';
-import 'package:coin_base/view/search_screen.dart';
+import 'package:coin_base/view/Home/home_screen.dart';
+import 'package:coin_base/view/News/news_screen.dart';
+import 'package:coin_base/view/Search/search_screen.dart';
 import 'package:coin_base/widgets/const.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
