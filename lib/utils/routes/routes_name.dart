@@ -6,8 +6,9 @@ class RoutesName {
 
   //LOGIN AUTH ROUTES
   static const String login = "login_screen";
-  static const String mobileLogin = "mobile_screen";
   static const String signUp = "signup_screen";
+  static const String mobileLogin = "mobile_screen";
+  static const String otpScreen = "otp_screen";
 
   //ALL PAGES ROUTES
   static const String navBar = "navbar_screen";
