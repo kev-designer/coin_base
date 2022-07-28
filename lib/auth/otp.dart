@@ -14,8 +14,8 @@ import 'package:coin_base/widgets/textbox.dart';
 import '../widgets/const.dart';
 
 class OtpScreen extends StatefulWidget {
-  String phone;
-  OtpScreen({
+  final String phone;
+  const OtpScreen({
     Key? key,
     required this.phone,
   }) : super(key: key);
