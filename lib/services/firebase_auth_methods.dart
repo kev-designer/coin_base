@@ -21,14 +21,10 @@ class FirebaseAuthMethods {
     } catch (e) {
       rethrow;
     }
-
-    // on FirebaseAuthException catch (e) {
-    //   Utils.snackBarMessage(e.message!, context);
-    // }
   }
 
   //EMAIL LOGIN
-  Future<void> loginWithEmail(  {
+  Future<void> loginWithEmail({
     required String email,
     required String password,
     required BuildContext context,
@@ -39,9 +35,8 @@ class FirebaseAuthMethods {
         password: password,
       );
       if (!_auth.currentUser!.emailVerified) {
+        // ignore: use_build_context_synchronously
         Navigator.pushNamed(context, RoutesName.navBar);
-      } else {
-        Navigator.pushNamed(context, RoutesName.signUp);
       }
     } catch (e) {
       Utils.snackBarMessage("Something went wrong, please try again", context);
