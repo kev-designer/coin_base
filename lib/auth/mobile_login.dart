@@ -73,7 +73,9 @@ class _MobileLoginScreenState extends State<MobileLoginScreen> {
               AnimatedButton(
                 textName: "Send otp".toUpperCase(),
                 // loading: authViewModel.loading,
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.popAndPushNamed(context, RoutesName.otpScreen);
+                },
                 buttonColor: ColorData.primary,
               ),
               32.heightBox,
