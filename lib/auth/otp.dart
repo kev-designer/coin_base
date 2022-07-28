@@ -1,33 +1,77 @@
-import 'package:coin_base/utils/routes/routes_name.dart';
-import 'package:coin_base/widgets/buttons.dart';
-import 'package:coin_base/widgets/colors.dart';
-import 'package:coin_base/widgets/textbox.dart';
+import 'package:coin_base/services/firebase_auth_methods.dart';
+import 'package:coin_base/utils/utils.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:velocity_x/velocity_x.dart';
 
+import 'package:coin_base/utils/routes/routes_name.dart';
+import 'package:coin_base/widgets/buttons.dart';
+import 'package:coin_base/widgets/colors.dart';
+import 'package:coin_base/widgets/textbox.dart';
+
 import '../widgets/const.dart';
 
 class OtpScreen extends StatefulWidget {
-  const OtpScreen({Key? key}) : super(key: key);
+  String phone;
+  OtpScreen({
+    Key? key,
+    required this.phone,
+  }) : super(key: key);
 
   @override
   State<OtpScreen> createState() => _OtpScreenState();
 }
 
 class _OtpScreenState extends State<OtpScreen> {
+  final GlobalKey<ScaffoldState> _scafoldKey = GlobalKey<ScaffoldState>();
   final TextEditingController _otpController = TextEditingController();
-
+  late String _verifinationCode;
   @override
   void dispose() {
     super.dispose();
     _otpController.dispose();
   }
 
+  mobileSignIn() async {
+    await FirebaseAuth.instance.verifyPhoneNumber(
+        phoneNumber: "+91${widget.phone}",
+        verificationCompleted: (PhoneAuthCredential credential) async {
+          await FirebaseAuth.instance
+              .signInWithCredential(credential)
+              .then((value) async {
+            if (value.user != null) {
+              Navigator.pushNamed(context, RoutesName.navBar);
+            }
+          });
+        },
+        codeAutoRetrievalTimeout: (String verificationId) {
+          setState(() {
+            _verifinationCode = verificationId;
+          });
+        },
+        timeout: const Duration(seconds: 60),
+        codeSent: (String verificationId, forceResendingToken) {
+          setState(() {
+            _verifinationCode = verificationId;
+          });
+        },
+        verificationFailed: (e) {
+          Utils.snackBarMessage(e.message!, context);
+        });
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    mobileSignIn();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      key: _scafoldKey,
       appBar: AppBar(
         leading: IconButton(
           onPressed: () {
@@ -69,7 +113,7 @@ class _OtpScreenState extends State<OtpScreen> {
                       )
                       .make(),
                   20.heightBox,
-                  "Enter the 4 digit OTP  sent to your +91 8849273553"
+                  "Enter the 4 digit OTP  sent to your +91 ${widget.phone}"
                       .text
                       .align(TextAlign.center)
                       .textStyle(
@@ -111,7 +155,26 @@ class _OtpScreenState extends State<OtpScreen> {
               AnimatedButton(
                 textName: "Submit".toUpperCase(),
                 // loading: authViewModel.loading,
-                onPressed: () {},
+                // onPressed: mobileSignIn,
+                onPressed: () async {
+                  try {
+                    await FirebaseAuth.instance
+                        .signInWithCredential(
+                      PhoneAuthProvider.credential(
+                        smsCode: _verifinationCode,
+                        verificationId: _verifinationCode,
+                      ),
+                    )
+                        .then((value) async {
+                      if (value.user != null) {
+                        print("");
+                      }
+                    });
+                  } catch (e) {
+                    FocusScope.of(context).unfocus();
+                    Utils.snackBarMessage("Invalid OTP", context);
+                  }
+                },
                 buttonColor: ColorData.primary,
               ),
               24.heightBox,

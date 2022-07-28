@@ -11,6 +11,8 @@ import 'package:google_fonts/google_fonts.dart';
 import 'routes_name.dart';
 
 class Routes {
+  final TextEditingController mobileController = TextEditingController();
+
   static Route<dynamic> generateRoute(RouteSettings settings) {
     // final argument = settings.arguments;
     switch (settings.name) {
@@ -40,10 +42,12 @@ class Routes {
         return MaterialPageRoute(
             builder: (context) => const MobileLoginScreen());
 
-              //MOBILE LOGIN PAGE
-      case RoutesName.otpScreen:
-        return MaterialPageRoute(
-            builder: (context) => const OtpScreen());
+      //MOBILE LOGIN PAGE
+      // case RoutesName.otpScreen:
+      //   return MaterialPageRoute(
+      //       builder: (context) => OtpScreen(
+      //             phone: mobileController.text,
+      //           ));
 
       //DEFAULT
       default:

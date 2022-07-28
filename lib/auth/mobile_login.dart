@@ -1,3 +1,4 @@
+import 'package:coin_base/auth/otp.dart';
 import 'package:coin_base/utils/routes/routes_name.dart';
 import 'package:coin_base/widgets/buttons.dart';
 import 'package:coin_base/widgets/colors.dart';
@@ -16,12 +17,12 @@ class MobileLoginScreen extends StatefulWidget {
 }
 
 class _MobileLoginScreenState extends State<MobileLoginScreen> {
-  final TextEditingController _mobileController = TextEditingController();
+  final TextEditingController mobileController = TextEditingController();
 
   @override
   void dispose() {
     super.dispose();
-    _mobileController.dispose();
+    mobileController.dispose();
   }
 
   @override
@@ -58,7 +59,7 @@ class _MobileLoginScreenState extends State<MobileLoginScreen> {
                   .make(),
               12.heightBox,
               TextFields(
-                controller: _mobileController,
+                controller: mobileController,
                 obscureText: false,
                 keybordType: TextInputType.number,
                 suffixIcon: SvgPicture.asset(""),
@@ -74,7 +75,11 @@ class _MobileLoginScreenState extends State<MobileLoginScreen> {
                 textName: "Send otp".toUpperCase(),
                 // loading: authViewModel.loading,
                 onPressed: () {
-                  Navigator.popAndPushNamed(context, RoutesName.otpScreen);
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) =>
+                              OtpScreen(phone: mobileController.text)));
                 },
                 buttonColor: ColorData.primary,
               ),

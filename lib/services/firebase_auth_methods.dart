@@ -1,3 +1,4 @@
+import 'package:coin_base/auth/otp.dart';
 import 'package:coin_base/utils/routes/routes_name.dart';
 import 'package:coin_base/utils/utils.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -43,12 +44,28 @@ class FirebaseAuthMethods {
     }
   }
 
-
   //MOBILE LOGIN
+  // Future<void> mobileSignIn(
+  //   BuildContext context,
+  //   String mobileNumber,
+  // ) async {
+  //   await _auth.verifyPhoneNumber(
+  //     verificationCompleted: (PhoneAuthCredential credential) async {
+  //       //  TextEditingController _otpController = TextEditingController();
 
+  //       await _auth.signInWithCredential(credential);
+  //     },
+  //     verificationFailed: (e) {
+  //       Utils.snackBarMessage(e.message!, context);
+  //     },
+  //     codeSent: ((String verificationId, int? resendToke) async {
+  //       OtpScreen(context: context);
+  //     }),
+  //     codeAutoRetrievalTimeout: (String verificationId) {},
+  //   );
+  // }
 
   //GOOGLE LOGIN
-
 
   //FACEBOOK LOGIN
 
