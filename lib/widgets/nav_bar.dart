@@ -22,6 +22,12 @@ class _NavBarState extends State<NavBar> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        actions: [
+          Padding(
+            padding: const EdgeInsets.only(right: 16),
+            child: SvgPicture.asset("assets/svgs/logout2.svg"),
+          ),
+        ],
         automaticallyImplyLeading: false,
         backgroundColor: ColorData.primary,
         title: Text("Coinbase App", style: GoogleFonts.nunito())

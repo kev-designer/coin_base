@@ -43,6 +43,9 @@ class FirebaseAuthMethods {
     }
   }
 
+
+  
+
   //EMAIL VERIFICATION
   Future<void> sendEmailVerification(BuildContext context) async {
     try {

@@ -1,7 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="15.164" height="15.164" viewBox="0 0 15.164 15.164">
-  <g id="Icon_feather-download" data-name="Icon feather-download" transform="translate(-3.8 18.964) rotate(-90)">
-    <path id="Path_60231" data-name="Path 60231" d="M18.264,22.5v3.059a1.529,1.529,0,0,1-1.529,1.529H6.029A1.529,1.529,0,0,1,4.5,25.559V22.5" transform="translate(0 -8.824)" fill="none" stroke="#ef093e" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.4"/>
-    <path id="Path_60232" data-name="Path 60232" d="M10.5,15l3.823,3.823L18.146,15" transform="translate(-2.941 -5.147)" fill="none" stroke="#ef093e" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.4"/>
-    <path id="Path_60233" data-name="Path 60233" d="M18,13.676V4.5" transform="translate(-6.618)" fill="none" stroke="#ef093e" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.4"/>
-  </g>
+<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="32" height="32" rx="4" fill="white"/>
+<path d="M13 25H9C8.46957 25 7.96086 24.7893 7.58579 24.4142C7.21071 24.0391 7 23.5304 7 23V9C7 8.46957 7.21071 7.96086 7.58579 7.58579C7.96086 7.21071 8.46957 7 9 7H13" stroke="#0052FE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M20 21L25 16L20 11" stroke="#0052FE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M25 16H13" stroke="#0052FE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
