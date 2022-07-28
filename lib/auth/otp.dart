@@ -1,7 +1,5 @@
-import 'package:coin_base/utils/routes/routes_name.dart';
 import 'package:coin_base/widgets/buttons.dart';
 import 'package:coin_base/widgets/colors.dart';
-import 'package:coin_base/widgets/const.dart';
 import 'package:coin_base/widgets/textbox.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
