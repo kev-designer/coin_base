@@ -44,7 +44,13 @@ class FirebaseAuthMethods {
   }
 
 
-  
+  //MOBILE LOGIN
+
+
+  //GOOGLE LOGIN
+
+
+  //FACEBOOK LOGIN
 
   //EMAIL VERIFICATION
   Future<void> sendEmailVerification(BuildContext context) async {
