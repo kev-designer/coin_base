@@ -1,8 +1,10 @@
+import 'package:coin_base/services/firebase_auth_methods.dart';
 import 'package:coin_base/utils/routes/routes_name.dart';
 import 'package:coin_base/widgets/buttons.dart';
 import 'package:coin_base/widgets/colors.dart';
 import 'package:coin_base/widgets/const.dart';
 import 'package:coin_base/widgets/textbox.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -25,6 +27,14 @@ class _LoginScreenState extends State<LoginScreen> {
     super.dispose();
     _emailController.dispose();
     _passwordController.dispose();
+  }
+
+  void loginUser() async {
+    FirebaseAuthMethods(FirebaseAuth.instance).loginWithEmail(
+      email: _emailController.text,
+      password: _passwordController.text,
+      context: context,
+    );
   }
 
   @override
@@ -112,7 +122,7 @@ class _LoginScreenState extends State<LoginScreen> {
               AnimatedButton(
                 textName: "Login".toUpperCase(),
                 // loading: authViewModel.loading,
-                onPressed: () {},
+                onPressed: loginUser,
                 buttonColor: ColorData.primary,
               ),
               32.heightBox,

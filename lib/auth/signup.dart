@@ -1,8 +1,11 @@
+import 'package:coin_base/services/firebase_auth_methods.dart';
 import 'package:coin_base/utils/routes/routes_name.dart';
+import 'package:coin_base/utils/utils.dart';
 import 'package:coin_base/widgets/buttons.dart';
 import 'package:coin_base/widgets/colors.dart';
 import 'package:coin_base/widgets/const.dart';
 import 'package:coin_base/widgets/textbox.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -19,6 +22,29 @@ class _SignUpScreenState extends State<SignUpScreen> {
   bool isHiddenPassword = true;
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
+
+  @override
+  void dispose() {
+    super.dispose();
+    _emailController.dispose();
+    _passwordController.dispose();
+  }
+
+  void signUpUser() async {
+    FirebaseAuthMethods(FirebaseAuth.instance).signUpWithEmail(
+      email: _emailController.text,
+      password: _passwordController.text,
+      context: context,
+    );
+    // if (_emailController.text.isEmpty && _passwordController.text.isEmpty) {
+    //   Utils.snackBarMessage("Email and Password can not be empty", context);
+    // } else if (_passwordController.text.isEmpty) {
+    //   Utils.snackBarMessage("Please enter Password", context);
+    // } else if (_emailController.text.isEmpty) {
+    //   Utils.snackBarMessage("Please enter Email", context);
+    // }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -104,7 +130,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
               AnimatedButton(
                 textName: "Sign Up".toUpperCase(),
                 // loading: authViewModel.loading,
-                onPressed: () {},
+                onPressed: signUpUser,
                 buttonColor: ColorData.primary,
               ),
               32.heightBox,
