@@ -37,26 +37,34 @@ class _OtpScreenState extends State<OtpScreen> {
   mobileSignIn() async {
     await FirebaseAuth.instance.verifyPhoneNumber(
         phoneNumber: "+91${widget.phone}",
+
+        //VERIFICATION COMPLETE
         verificationCompleted: (PhoneAuthCredential credential) async {
           await FirebaseAuth.instance
               .signInWithCredential(credential)
               .then((value) async {
-            if (value.user != null) {
-              Navigator.pushNamed(context, RoutesName.navBar);
-            }
+            Navigator.pushNamed(context, RoutesName.navBar);
           });
         },
+
+        //CODE AUTO RETRIEVE
         codeAutoRetrievalTimeout: (String verificationId) {
           setState(() {
             _verifinationCode = verificationId;
           });
         },
+
+        //TIMEOUT
         timeout: const Duration(seconds: 60),
-        codeSent: (String verificationId, forceResendingToken) {
+
+        //CODE SENT
+        codeSent: (String verificationId, int? forceResendingToken) {
           setState(() {
             _verifinationCode = verificationId;
           });
         },
+
+        //FAILED
         verificationFailed: (e) {
           Utils.snackBarMessage(e.message!, context);
         });
@@ -161,14 +169,12 @@ class _OtpScreenState extends State<OtpScreen> {
                     await FirebaseAuth.instance
                         .signInWithCredential(
                       PhoneAuthProvider.credential(
-                        smsCode: _verifinationCode,
+                        smsCode: _otpController.text,
                         verificationId: _verifinationCode,
                       ),
                     )
                         .then((value) async {
-                      if (value.user != null) {
-                        print("");
-                      }
+                      Navigator.pushNamed(context, RoutesName.navBar);
                     });
                   } catch (e) {
                     FocusScope.of(context).unfocus();
