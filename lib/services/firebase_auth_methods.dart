@@ -18,19 +18,17 @@ class FirebaseAuthMethods {
         email: email,
         password: password,
       );
-
-      if (_auth.currentUser!.emailVerified) {
-        await sendEmailVerification(context);
-      } else {
-        Navigator.pushNamed(context, RoutesName.login);
-      }
-    } on FirebaseAuthException catch (e) {
-      Utils.snackBarMessage(e.message!, context);
+    } catch (e) {
+      rethrow;
     }
+
+    // on FirebaseAuthException catch (e) {
+    //   Utils.snackBarMessage(e.message!, context);
+    // }
   }
 
   //EMAIL LOGIN
-  Future<void> loginWithEmail({
+  Future<void> loginWithEmail(  {
     required String email,
     required String password,
     required BuildContext context,
@@ -41,12 +39,12 @@ class FirebaseAuthMethods {
         password: password,
       );
       if (!_auth.currentUser!.emailVerified) {
-        await sendEmailVerification(context);
-      } else {
         Navigator.pushNamed(context, RoutesName.navBar);
+      } else {
+        Navigator.pushNamed(context, RoutesName.signUp);
       }
-    } on FirebaseAuthException catch (e) {
-      Utils.snackBarMessage(e.message!, context);
+    } catch (e) {
+      Utils.snackBarMessage("Something went wrong, please try again", context);
     }
   }
 

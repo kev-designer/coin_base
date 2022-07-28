@@ -30,21 +30,6 @@ class _SignUpScreenState extends State<SignUpScreen> {
     _passwordController.dispose();
   }
 
-  void signUpUser() async {
-    FirebaseAuthMethods(FirebaseAuth.instance).signUpWithEmail(
-      email: _emailController.text,
-      password: _passwordController.text,
-      context: context,
-    );
-    // if (_emailController.text.isEmpty && _passwordController.text.isEmpty) {
-    //   Utils.snackBarMessage("Email and Password can not be empty", context);
-    // } else if (_passwordController.text.isEmpty) {
-    //   Utils.snackBarMessage("Please enter Password", context);
-    // } else if (_emailController.text.isEmpty) {
-    //   Utils.snackBarMessage("Please enter Email", context);
-    // }
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -130,7 +115,24 @@ class _SignUpScreenState extends State<SignUpScreen> {
               AnimatedButton(
                 textName: "Sign Up".toUpperCase(),
                 // loading: authViewModel.loading,
-                onPressed: signUpUser,
+                onPressed: () async {
+                  FirebaseAuthMethods(FirebaseAuth.instance).signUpWithEmail(
+                    email: _emailController.text,
+                    password: _passwordController.text,
+                    context: context,
+                  );
+                  if (_emailController.text.isEmpty &&
+                      _passwordController.text.isEmpty) {
+                    Utils.snackBarMessage(
+                        "Email and Password can not be empty", context);
+                  } else if (_passwordController.text.isEmpty) {
+                    Utils.snackBarMessage("Please enter Password", context);
+                  } else if (_emailController.text.isEmpty) {
+                    Utils.snackBarMessage("Please enter Email", context);
+                  } else {
+                    Navigator.pushNamed(context, RoutesName.navBar);
+                  }
+                },
                 buttonColor: ColorData.primary,
               ),
               32.heightBox,

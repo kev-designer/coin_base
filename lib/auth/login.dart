@@ -1,5 +1,6 @@
 import 'package:coin_base/services/firebase_auth_methods.dart';
 import 'package:coin_base/utils/routes/routes_name.dart';
+import 'package:coin_base/utils/utils.dart';
 import 'package:coin_base/widgets/buttons.dart';
 import 'package:coin_base/widgets/colors.dart';
 import 'package:coin_base/widgets/const.dart';
