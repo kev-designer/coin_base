@@ -58,7 +58,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   height: height(context) * .18,
                 ),
               ),
-              40.heightBox,
+
               //EMAIL
               "Email"
                   .text
@@ -160,7 +160,10 @@ class _LoginScreenState extends State<LoginScreen> {
                     textColor: ColorData.white,
                     onPressed: () {
                       FirebaseAuthMethods(FirebaseAuth.instance)
-                          .signInWithFacebook(context);
+                          .signInWithFacebook(context)
+                          .then((value) async {
+                        Navigator.pushNamed(context, RoutesName.navBar);
+                      });
                     },
                     buttonColor: Colors.blueAccent,
                   ),
