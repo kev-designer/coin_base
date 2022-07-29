@@ -54,7 +54,7 @@ class PrimaryButton extends StatelessWidget {
   }
 }
 
-//PRIMARY BUTTON
+//SECONDARY BUTTON
 class SecondaryButton extends StatelessWidget {
   final VoidCallback onPressed;
   final String textName;
@@ -196,6 +196,57 @@ class TxtButton extends StatelessWidget {
               color: ColorData.primary,
             ),
           )),
+    );
+  }
+}
+
+//SMALL BUTTON
+//SECONDARY BUTTON
+class SmallButton extends StatelessWidget {
+  final VoidCallback onPressed;
+  final String textName;final Color textColor;
+  final Color buttonColor;
+
+  const SmallButton(
+      {Key? key,
+      required this.textName,
+        required this.textColor,
+      required this.onPressed,
+      required this.buttonColor})
+      : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return ElevatedButton(
+      style: ElevatedButton.styleFrom(
+        primary: buttonColor,
+        elevation: 0,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(10.0),
+        ),
+      ),
+      onPressed: () {
+        onPressed();
+      },
+      child: Container(
+        alignment: Alignment.center,
+        height: 50,
+        width: width(context) * .3,
+        decoration: const BoxDecoration(
+          borderRadius: BorderRadius.all(
+            Radius.circular(6),
+          ),
+        ),
+        child: Text(
+          textName,
+          style: GoogleFonts.nunito(
+            color: textColor,
+            letterSpacing: 1,
+            fontSize: 18,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+      ),
     );
   }
 }

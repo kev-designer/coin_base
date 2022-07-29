@@ -149,6 +149,30 @@ class _LoginScreenState extends State<LoginScreen> {
                 buttonColor: ColorData.lightgrey.withOpacity(.6),
               ),
               32.heightBox,
+
+              //SIGNUP BUTTON
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  SmallButton(
+                    textName: "Facebook".toUpperCase(),
+                    textColor: ColorData.white,
+                    onPressed: () {
+                      // Navigator.pushNamed(context, RoutesName.signUp);
+                    },
+                    buttonColor: Colors.blueAccent,
+                  ),
+                  SmallButton(
+                    textName: "Google".toUpperCase(),
+                    textColor: ColorData.white,
+                    onPressed: () {
+                      // Navigator.pushNamed(context, RoutesName.signUp);
+                    },
+                    buttonColor: Colors.red,
+                  ),
+                ],
+              ),
+              32.heightBox,
             ],
           ),
         ),
