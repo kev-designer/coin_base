@@ -159,7 +159,8 @@ class _LoginScreenState extends State<LoginScreen> {
                     textName: "Facebook".toUpperCase(),
                     textColor: ColorData.white,
                     onPressed: () {
-                      // Navigator.pushNamed(context, RoutesName.signUp);
+                      FirebaseAuthMethods(FirebaseAuth.instance)
+                          .signInWithFacebook(context);
                     },
                     buttonColor: Colors.blueAccent,
                   ),

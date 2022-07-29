@@ -34,6 +34,12 @@
 			</array>
 		</dict>
 	</array>
+	<key>FacebookAppID</key>
+	<string>607229154081488</string>
+	<key>FacebookClientToken</key>
+	<string>d4a54dcc7d5c95d8bb08fd55605094e2</string>
+	<key>FacebookDisplayName</key>
+	<string>Firebase Flutter Tutorial</string>
 	<key>CFBundleVersion</key>
 	<string>$(FLUTTER_BUILD_NUMBER)</string>
 	<key>LSRequiresIPhoneOS</key>

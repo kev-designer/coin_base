@@ -3,6 +3,7 @@ import 'package:coin_base/utils/routes/routes_name.dart';
 import 'package:coin_base/utils/utils.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_facebook_auth/flutter_facebook_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 
 class FirebaseAuthMethods {
@@ -70,6 +71,17 @@ class FirebaseAuthMethods {
   }
 
   //FACEBOOK LOGIN
+  Future<void> signInWithFacebook(BuildContext context) async {
+    try {
+      final LoginResult loginResult = await FacebookAuth.instance.login();
+      final OAuthCredential fabebookAuthCredential =
+          FacebookAuthProvider.credential(loginResult.accessToken!.token);
+
+      await _auth.signInWithCredential(fabebookAuthCredential);
+    } on FirebaseAuthException catch (e) {
+      Utils.snackBarMessage(e.message!, context);
+    }
+  }
 
   //EMAIL VERIFICATION
   Future<void> sendEmailVerification(BuildContext context) async {
