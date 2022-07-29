@@ -150,10 +150,11 @@ class _LoginScreenState extends State<LoginScreen> {
               ),
               32.heightBox,
 
-              //SIGNUP BUTTON
+              //SOCIAL MEDIA BUTTON
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
+                  //FB BUTTON
                   SmallButton(
                     textName: "Facebook".toUpperCase(),
                     textColor: ColorData.white,
@@ -162,11 +163,17 @@ class _LoginScreenState extends State<LoginScreen> {
                     },
                     buttonColor: Colors.blueAccent,
                   ),
+
+                  //GOOGLE BUTTON
                   SmallButton(
                     textName: "Google".toUpperCase(),
                     textColor: ColorData.white,
                     onPressed: () {
-                      // Navigator.pushNamed(context, RoutesName.signUp);
+                      FirebaseAuthMethods(FirebaseAuth.instance)
+                          .signInWithGoogle(context)
+                          .then((value) async {
+                        Navigator.pushNamed(context, RoutesName.navBar);
+                      });
                     },
                     buttonColor: Colors.red,
                   ),

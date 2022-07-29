@@ -3,6 +3,7 @@ import 'package:coin_base/utils/routes/routes_name.dart';
 import 'package:coin_base/utils/utils.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 
 class FirebaseAuthMethods {
   final FirebaseAuth _auth;
@@ -43,29 +44,30 @@ class FirebaseAuthMethods {
       Utils.snackBarMessage("Something went wrong, please try again", context);
     }
   }
-
-  //MOBILE LOGIN
-  // Future<void> mobileSignIn(
-  //   BuildContext context,
-  //   String mobileNumber,
-  // ) async {
-  //   await _auth.verifyPhoneNumber(
-  //     verificationCompleted: (PhoneAuthCredential credential) async {
-  //       //  TextEditingController _otpController = TextEditingController();
-
-  //       await _auth.signInWithCredential(credential);
-  //     },
-  //     verificationFailed: (e) {
-  //       Utils.snackBarMessage(e.message!, context);
-  //     },
-  //     codeSent: ((String verificationId, int? resendToke) async {
-  //       OtpScreen(context: context);
-  //     }),
-  //     codeAutoRetrievalTimeout: (String verificationId) {},
-  //   );
-  // }
+//MOBILE LOGIN
 
   //GOOGLE LOGIN
+  Future<void> signInWithGoogle(BuildContext context) async {
+    try {
+      final GoogleSignInAccount? googleUser = await GoogleSignIn().signIn();
+      final GoogleSignInAuthentication? googleAuth =
+          await googleUser?.authentication;
+
+      if (googleAuth?.accessToken != null && googleAuth?.idToken != null) {
+        final credential = GoogleAuthProvider.credential(
+          accessToken: googleAuth?.accessToken,
+          idToken: googleAuth?.idToken,
+        );
+        UserCredential userCredential =
+            await _auth.signInWithCredential(credential);
+        if (userCredential.user != null) {
+          if (userCredential.additionalUserInfo!.isNewUser) {}
+        }
+      }
+    } on FirebaseAuthException catch (e) {
+      Utils.snackBarMessage(e.message!, context);
+    }
+  }
 
   //FACEBOOK LOGIN
 
