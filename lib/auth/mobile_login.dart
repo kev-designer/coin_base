@@ -76,10 +76,11 @@ class _MobileLoginScreenState extends State<MobileLoginScreen> {
                 // loading: authViewModel.loading,
                 onPressed: () {
                   Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) =>
-                              OtpScreen(phone: mobileController.text)));
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) =>
+                            OtpScreen(phone: mobileController.text)),
+                  );
                 },
                 buttonColor: ColorData.primary,
               ),
